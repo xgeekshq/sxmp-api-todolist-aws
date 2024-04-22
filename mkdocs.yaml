@@ -1,0 +1,16 @@
+site_name: sxmp-api-todolist-aws
+site_description: 'Main documentation for sxmp-api-todolist-aws project'
+repo_url: https://github.com/xgeekshq/sxmp-api-todolist-aws.git
+edit_uri: edit/master/docs
+
+# plugins:
+#   - techdocs-core
+
+# For sidebar navigation
+nav:
+  - index.md
+  - Overview:
+      - What is sxmp-api-todolist-aws?: 'overview/what-is-sxmp-api-todolist-aws.md'
+      - Project Roadmap: 'overview/roadmap.md'
+  - Getting Started:
+      - Getting Started: 'index.md'

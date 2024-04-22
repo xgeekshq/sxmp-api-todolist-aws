@@ -1,0 +1,68 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sxmp-api-todolist-aws
+  # namespace: default
+  description: multicloud poc
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: xgeekshq/sxmp-api-todolist-aws
+  tags: ['service', 'nestjs', 'api', 'rest']
+  links:
+    - url: https://idp.xgeeks.tech/catalog/default/template/poc-multicluster
+      title: Source Template
+      icon: docs
+    - url: https://github.com/xgeekshq/sxmp-api-todolist-aws.git
+      title: Project Source Code Repository
+      icon: github
+    - url: https://github.com/xgeekshq/sxmp-api-todolist-aws_deployment.git
+      title: Project Deployment Repository
+      icon: github
+    - url: https://sxmp-api-todolist-aws-dev.aws.xgeeks.tech
+      title: Project Website
+      icon: website
+    - url: https://sxmp-api-todolist-aws-dev.aws.xgeeks.tech/api
+      title: Project OpenApi Spec Website
+      icon: website
+    - url: https://argocd.xgeeks.tech/applications/argocd/sxmp-api-todolist-aws-dev?view=tree&resource=
+      title: ArgoCD Dashboard
+      icon: dashboard
+      
+spec:
+  type: service
+  lifecycle: experimental # REQUIRED, usually = production | experimental | deprecated
+  owner: group:default/idp_training
+  providesApis:
+    - sxmp-api-todolist-aws-api
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: sxmp-api-todolist-aws-api
+  description: multicloud poc
+  annotations:
+    github.com/project-slug: xgeekshq/sxmp-api-todolist-aws
+  tags: ['api', 'rest']
+  links:
+    - url: https://idp.xgeeks.tech/catalog/default/template/poc-multicloud
+      title: Source Template
+      icon: docs
+    - url: https://github.com/xgeekshq/sxmp-api-todolist-aws.git
+      title: Project Source Code Repository
+      icon: github
+    - url: https://github.com/xgeekshq/sxmp-api-todolist-aws_deployment.git
+      title: Project Deployment Repository
+      icon: github
+    - url: https://sxmp-api-todolist-aws-dev.aws.xgeeks.tech
+      title: Project Website
+      icon: website
+    - title: ArgoCD Dashboard
+      icon: dashboard
+      url: https://argocd.xgeeks.tech/applications/argocd/sxmp-api-todolist-aws-dev?view=tree&resource=
+spec:
+  type: openapi
+  lifecycle: experimental # REQUIRED, usually = production | experimental | deprecated
+  owner: group:default/idp_training
+  definition:
+    $text: ./openapi-spec.yaml
